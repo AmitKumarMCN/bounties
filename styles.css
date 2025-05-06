@@ -460,7 +460,7 @@ header.navbar {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 .how-it-works .card {
-    background:linear-gradient(0deg, rgb(30 5 47), #1e293b);
+    background:linear-gradient(0deg, rgb(36 31 40 / 68%), #1e293b);
     color: #fff;
     padding: 1.8rem 1rem;
     border-radius: 10px;
@@ -575,12 +575,9 @@ header.navbar {
     max-width: 540px;
 }
 .tag {
-    display: inline-block;
-    background: #3c2c63;
-    color: #d0aaff;
-    padding: 6px 16px;
-    font-size: 0.8rem;
-    border-radius: 20px;
+  display: inline-block;
+  color: #00e2ff;
+  font-size: 1rem;
   }
 
 .notify-heading {
@@ -620,8 +617,8 @@ header.navbar {
 
   .countdown {
     position: absolute;
-    right: 60px;
-    top: 100px;
+    top: 50px;
+    right:50px;
     text-align: center;
     border-radius: 50%;
     border: 4px solid #00e5ff;
