@@ -1,25 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Syne", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 a {
     text-decoration: none;
     color: inherit;
 }
 .text-center {
-    text-align: center;
+    text-align: center !important;
 }
 .text-left {
-    text-align: left;
+    text-align: left !important;
 }
 .text-right {
-    text-align: right;
+    text-align: right !important;
 }
 
 section{
-    padding: 60px 0;
+    padding:4.5rem 0;
 }
 .section-title {
     font-size: 2rem;
@@ -87,7 +88,7 @@ section{
 }
 
  .btn.primary {
-    background: linear-gradient(135deg, #00d8ff, #a259ff); /* Gradient matching the image */
+    background:linear-gradient(135deg, #258da1, #5600c4);
     color: #ffffff;
     border: none;
 }
@@ -131,7 +132,7 @@ body {
 
 /* Navigation Header */
 header.navbar {
-    background-color: #0d11176c; 
+    background-color: #0d1117ab; 
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: sticky;
@@ -173,21 +174,29 @@ header.navbar {
 .nav-links a:hover {
     color: #58a6ff;
 }
-
+.nav-links a.active {
+  color: #00fff0; /* Highlight color for active link */
+  border-bottom: 2px solid #00fff0; /* Optional underline */
+}
 .btn.sign-in {
     color: #ffffff;
     padding: 8px 20px;
     border: none;
     border-radius: 20px;
-    background: linear-gradient(135deg, #00d8ff, #a259ff); 
+    background: linear-gradient(-135deg, #00d8ff, #a259ff); 
     font-size: 1rem;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn.sign-in:hover {
-    background: linear-gradient(-135deg, #00d8ff, #a259ff); 
+    background: linear-gradient(135deg, #00d8ff, #a259ff); 
    
+}
+.menu-toggle, .fa-x, .navbar.show-menu .fa-bars{
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 /* Hero Section */
@@ -263,7 +272,7 @@ header.navbar {
     z-index: 1; /* Ensure text is above the background */
 }
 .hero-section h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #ffffff;
@@ -280,62 +289,16 @@ header.navbar {
     color: #000;
 }
 
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 40px;
-}
-
-.stats div {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.stats .stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
-    background: linear-gradient(145deg, #00ffcd, #03A9F4, #da00ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.stats .stat-number:nth-child(2) {
-    background: linear-gradient(145deg, #00ffcd, #03A9F4, #da00ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.stats .stat-number:nth-child(3) {
-    background: linear-gradient(145deg, #00ffcd, #03A9F4, #da00ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.stats .stat-label {
-    font-size: 1rem;
-    color: #c9d1d9;
-}
 .cta-buttons {
     margin-top: 40px;
     margin-bottom: 40px;
     display: flex;
     justify-content: center;
     gap: 20px;
-}
-.points {
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: rgb(167 243 208);
-    background: rgb(6 78 59);
-    padding: 4px 8px;
-    border-radius: 20px;
-}
+} 
+
 /* Bounty Challenges Section */
 .bounty-challenges {
-    padding: 60px 0;
     background-color: #161b22; /* Slightly lighter section background */
 }
 .bounty-challenges .cards, .past-bounties .cards{
@@ -352,6 +315,14 @@ header.navbar {
     font-size: 1.1rem;
     margin-bottom: 35px;
     color: #d1d7e0;
+}
+.prize {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(0 0 0);
+  background: linear-gradient(30deg, #ff8b15, #FFC107);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
 }
 .date{
     display: flex;
@@ -371,20 +342,27 @@ header.navbar {
 }
 
 .card {
-    background-color: #21262d; /* Card background */
+    background: linear-gradient(325deg, rgb(4, 89, 100), #363671);
     padding: 25px;
     border-radius: 12px;
     width: auto;
     text-align: left;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #535384;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  border-color:#b2b2ff;
+  background: linear-gradient(325deg, rgb(1, 111, 126), #474790);
+  /* background: linear-gradient(-90deg, rgb(0 0 0 / 47%), #262653); */
 }
-
+.past-bounties .card {
+  background: #201e30 !important;
+}
 .card h3 {
     font-size: 1.3rem;
     margin-bottom: 12px;
@@ -392,28 +370,26 @@ header.navbar {
 }
 
 .card p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
-    color: #8b949e;
+    color: #e9eff5 ;
     min-height: 40px;
 }
 
 .card-footer {
     display: flex;
     flex-direction: row-reverse;
-    justify-content:start;
+    justify-content:space-between;
     align-items: center;
     gap: 1rem;
     font-size: 1rem;
-    color: #8b949e;
+    color: #dfdfe0;
 }
-.card-footer + .btn{
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    font-size: 0.8rem;
-    z-index: 1;
+.card .btn.small{
+  display: none;
 }
+
+
 /* Community Highlights Section - Dark Theme */
 .community-highlights {
     background-color: #161b22; /* Dark background */
@@ -448,7 +424,7 @@ header.navbar {
     height: 100%;
     opacity: 0.9;
     z-index: -1;
-    background: url(images/bg-02.jpg) center center / cover no-repeat;
+    background: url(images/grid-svg-image.svg) center center / cover no-repeat;
     background-attachment: fixed;
     opacity: 0.5;
 }
@@ -522,10 +498,11 @@ header.navbar {
 }
 
 .sponsor-content p {
-    font-size: 0.8rem;
-    color: #ccc;
+    font-size: 1rem;
+    color: #e9eff5;
     line-height: 1.6;
     margin-bottom: 20px;
+    font-weight: 300;
 }
 
 .sponsor-buttons {
@@ -570,7 +547,7 @@ header.navbar {
 .coming-soon-content{
     max-width: 540px;
 }
-.tag {
+.tag{
   display: inline-block;
   color: #00e2ff;
   font-size: 1rem;
@@ -583,10 +560,11 @@ header.navbar {
   }
 
   .description {
-    font-size: 0.8rem;
+    font-size:1rem;
     color: #cbd5e1;
     margin-bottom: 30px;
     max-width: 600px;
+    font-weight: 300;
   }
 
   .info-row {
@@ -599,16 +577,19 @@ header.navbar {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     background: #1c1c2e;
     padding: 10px 16px;
     border-radius: 8px;
   }
 
   .info-row .cash {
-    background: #ffc107;
-    color: #000;
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(0 0 0);
+    background: linear-gradient(30deg, #ff8b15, #FFC107);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
   }
 
   .countdown {
@@ -677,7 +658,7 @@ header.navbar {
 
 /* Footer Section */
 .footer {
-    background: linear-gradient(145deg, #0a0f1f, #1a1a2e);
+    background: #151923;
     color: #A0A3B1;
     padding: 60px 20px;
     font-family: 'Syne', sans-serif;
@@ -772,8 +753,33 @@ header.navbar {
     text-decoration: underline;
   }
   
-  /* Responsive Footer Adjustments */
+  /* Responsive */
   @media (max-width: 768px) {
+    .btn.sign-in{
+      display: none;
+    }
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: end;
+        position: absolute;
+        top: 56px;
+        right:0px;
+        background: #0a0f1f;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        border-radius: 0;
+        width: 200px;
+        min-height: calc(100vh - 57px);
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    .menu-toggle, .navbar.show-menu  .nav-links, .navbar.show-menu .fa-x{
+        display: flex;
+    }
+    .hero-section{
+      overflow: hidden;
+    }
     .footer .container {
       flex-direction: column;
       align-items: center;
