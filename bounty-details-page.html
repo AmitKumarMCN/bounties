@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Corner - Bounty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+/* Bounty Details Section */
+.sticky{
+    position: sticky;
+    top:100px;
+}
+.bounty-details-banner {
+    padding: 4rem 0;
+    text-align: center;
+    background: url(images/grid-svg-image.svg) center center / cover no-repeat;
+}
+
+.bounty-details-banner h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.bounty-details-banner .description {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+}
+
+.bounty-details-banner .details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.bounty-details-banner .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #c9d1d9;
+}
+/* Content Wrapper */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+@media screen and (max-width: 767.98px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .bounty-details-banner h1 {
+        font-size: 2rem;
+    }
+}
+/* Main Content */
+.main-content {
+    font-size: 1rem;
+    color: #e9eff5;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+.inner-wrapper{
+    margin-bottom: 2rem;
+}
+
+/* Submission Guidelines Section */
+.submission-guidelines {
+    padding: 4rem 0;
+    background-color: #161b22;
+}
+.sub-headings {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+article {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.submission-guidelines ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+
+.submission-guidelines ul li {
+    font-size: 1rem;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.submission-guidelines ul li::before {
+    content: "✓";
+    color: #00ff04;
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+    line-height: 28px;
+}
+
+/* Reward Giveaways Section */
+.announcements-section{
+    font-size: 1rem;
+    padding: 1.5rem;
+    background: #d4ffff1f;
+    border: 2px solid #098181;
+}
+.announcements-section .sub-headings{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.announcement {
+    font-size: 1.2rem;
+    color: #00ffff;
+    margin-top: 1.5rem;
+}
+
+
+.note{
+    margin-top: 2rem;
+    font-size: 1rem;
+    padding: 1rem;
+    border-left: 5px solid #00ffff;
+    background: #d4ffff1f;
+}
+.sidebar-content{
+    color: #fff;
+    line-height: 1.5;
+    background: linear-gradient(0deg, rgb(0 0 0 / 47%), #1e293b);
+    padding: 1.5rem;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    border-image: linear-gradient(45deg, #00f0ff, #ff00e0) 1;
+    transition: all 0.3s ease;
+    
+}
+.sidebar-content:hover{
+    border-image: linear-gradient(-45deg, #00f0ff, #ff00e0) 1;
+}
+.sidebar-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(197deg, #0077ff, #de00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.join-button{
+    display: inline-block;
+    margin-top:1rem;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #ff00cc, #ff8800);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.join-button:hover{
+    background: linear-gradient(90deg, #ff8800, #ff00cc);
+}
+    </style>
+</head>
+<body>
+     <!-- Navigation Header -->
+     <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo-white.png" alt="logo" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#bounties">Bounties</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#archive">Archive</a></li>
+            </ul>
+            <a href="#" class="btn sign-in">Become a Sponsor</a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-x"></i>
+              </div>
+        </div>
+    </header>
+
+    <!-- Bounty Details Section -->
+    <section class="bounty-details-banner">
+        <div class="container">
+            <h1><span class="highlight">The Future of AI in Software Development</span></h1>
+            <p class="descriptions">Write an in-depth article about how AI is transforming the software development landscape.</p>
+            <div class="details">
+                <div class="detail-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Due Date: May 15</span>
+                </div>
+                <div class="detail-item">
+                    <span class="prize"><i class="fas fa-dollar"></i> 1,000 Cash Prize</span>
+                </div>
+            </div>
+                <!-- <a href="#" class="btn small primary">Participate Now</a> -->
+        </div>
+    </section>
+
+    <!-- Submission Guidelines Section -->
+    <section class="submission-guidelines">
+        <div class="container">
+            <div class="content-wrapper">
+                 <!-- Main Content -->
+            <div class="main-content">
+                <div class="inner-wrapper">
+                <div class="sub-headings">Bounty Details</div>
+                <article>
+                    Artificial Intelligence is no longer just a buzzword—it is rapidly becoming the backbone of innovation across all domains of software development. From intelligent code completion to automated testing, and from AI-assisted design to entire application generation, the future of software engineering is being reshaped before our eyes.
+                </article>
+                <article>
+                    We invite you to be part of this exciting transition by submitting a detailed and original article on how AI is revolutionizing the world of software development. This is more than just a writing opportunity—it’s a chance to showcase your thoughts, share your knowledge, and win a $1,000 cash prize while you’re at it.
+                </article>
+
+            <div class="sub-headings">
+                🧾 Submission Guidelines
+            </div>
+            <p>
+                To ensure fairness and maintain quality, please review and adhere to the following guidelines before submitting your entry:
+            </p>
+            <ul>
+                <li>Originality: Your article must be your own work and not published elsewhere.</li>
+                <li>Relevance: Include practical examples and code snippets where appropriate to support your arguments or demonstrate AI tools in action.</li>
+                <li>Clarity: Use proper formatting, grammar, and structure. The more readable and organized, the better.</li>
+                <li>Submit your article before the deadline.</li>
+            </ul>
+
+            <p class="note">Note: Articles that do not meet these criteria may be disqualified from the contest.</p>
+        </div>
+
+          <div class="reward-giveaways inner-wrapper">
+            <div class="sub-headings">
+                🎁 Reward Giveaways
+            </div>
+            <p>
+                By participating in this challenge, you not only gain visibility in the developer community but also stand a chance to win exciting rewards, including:
+            </p>
+
+            <ul>
+                <li>
+                    💵 Cash prizes (including the top $1,000 award)
+                </li>
+                <li>
+                    🎁 Exclusive branded merchandise
+                </li>
+                <li>
+                    🌟 Recognition on our platform
+                </li>
+            </ul>
+            <p>
+                Our panel of judges will evaluate each submission based on:
+            </p>
+            <ul>
+                <li>Originality and creativity</li>
+                <li>Technical depth and relevance</li>
+                <li>Practical examples or insights shared</li>
+                <li>Overall impact and writing quality</li>
+            </ul>
+          </div>
+
+            <div class="announcements-section inner-wrapper">
+                <p class="sub-headings">📢 Announcement Date</p>
+                <p class="announcement">We’re just as excited as you are! The winners will be officially announced on May 20, 2025. So, make sure your calendar is marked, and stay tuned for the big reveal.</p>
+            </div>
+            <div class="why-you-should-participate inner-wrapper">
+                <div class="sub-headings">
+                    Why You Should Participate
+                </div>
+                <article>
+                    This is not just a contest—it’s an opportunity to make your voice heard in one of the most exciting areas of technology today. Whether you’re a developer, technical writer, AI enthusiast, or thought leader in tech, your article can help educate and inspire others as we navigate the evolving role of AI in building the future of software.
+                </article>
+                <p>
+                    By contributing, you also expand your portfolio, connect with like-minded innovators, and open doors to future opportunities.
+                </p>
+            </div>
+            <div class="ready-to-start inner-wrapper">
+                <div class="sub-headings">
+                    ✍️ Ready to Start?
+                </div>
+                <article>
+                    Draft your article, follow the submission guidelines, and be sure to deliver it before the deadline. Join us in exploring the power and potential of AI in shaping the software of tomorrow.
+                </article>
+                <p>
+                    Let’s build the future—one intelligent line of code at a time.
+                </p>
+            </div>
+        <div class="cta-buttons">
+            <a href="#" class="btn primary">Participate Now</a>
+        </div>
+
+    </div>
+    <aside class="right-sidebar">
+        <div class="sidebar-content sticky">
+            <h3><i class="fas fa-gift"></i> Unlock Rewards</h3>
+            <p>
+                Discover the exciting opportunities in the world of AI and software development! Join our bounty program to share your knowledge, showcase your skills, and contribute to the future of technology.
+            </p>
+            <a href="#" class="join-button">Join Now!</a>
+        </div> 
+    </aside>
+
+           
+
+</div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-dark">
+        <div class="container">
+          <div class="footer-social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-windows"></i></a>
+            <a href="#"><i class="fab fa-apple"></i></a>
+            <a href="#"><i class="fab fa-google-play"></i></a>
+          </div>
+      
+          <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+            <a href="#">Media Kit</a>
+            <a href="#">Partners</a>
+            <a href="#">C# Tutorials</a>
+            <a href="#">Consultants</a>
+            <a href="#">Ideas</a>
+            <a href="#">Report A Bug</a>
+            <a href="#">FAQs</a>
+            <a href="#">Certifications</a>
+            <a href="#">Sitemap</a>
+            <a href="#">Stories</a>
+            <a href="#">CSharp TV</a>
+            <a href="#">DB Talks</a>
+            <a href="#">Let's React</a>
+            <a href="#">Web3 Universe</a>
+            <a href="#">Interviews.help</a>
+            <a href="#">Jumpstart Blockchain</a>
+            <a href="#">Build with JavaScript</a>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>©2025 C# Corner. All contents are copyright of their authors.</p>
+          </div>
+        </div>
+      </footer>
+
+    
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Select all navbar links
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
+
+    // Function to update active class based on scroll position
+    function updateActiveLink() {
+        let currentSection = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 50; // Adjust for navbar height
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === currentSection) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', updateActiveLink);
+
+
+    const menuToggle = document.querySelector('.menu-toggle');
+  const navLink = document.querySelector('.navbar');
+
+  menuToggle.addEventListener('click', () => {
+    navLink.classList.toggle('show-menu');
+  });
+
+  </script>
+</body>
+</html>
