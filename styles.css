@@ -752,7 +752,14 @@ header.navbar {
   .footer-bottom p a:hover {
     text-decoration: underline;
   }
+
+@media screen and (max-width: 1280px) {
+  .bounty-challenges .cards, .past-bounties .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
   
+}
   /* Responsive */
   @media (max-width:768px) {
     .btn.sign-in{
@@ -802,10 +809,3 @@ header.navbar {
       justify-content: center;
     }
   }
-@media screen and (max-width: 1280px) {
-  .bounty-challenges .cards, .past-bounties .cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  }
-  
-}
