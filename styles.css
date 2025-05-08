@@ -794,7 +794,10 @@ header.navbar {
     .card-footer {
     flex-direction: column;
     }
-
+        .sponsor-buttons,.info-row,.notify {
+            flex-wrap: wrap;
+                gap: 1.5rem;
+        }
     .footer .container {
       flex-direction: column;
       align-items: center;
@@ -807,5 +810,8 @@ header.navbar {
   
     .social-icons {
       justify-content: center;
+    }
+    .footer-social-icons a {
+        font-size: 1.5rem;
     }
   }
