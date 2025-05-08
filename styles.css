@@ -328,7 +328,7 @@ header.navbar {
     display: flex;
     align-items: center;
     gap:5px;
-    line-height: 10px;
+    line-height: 14px;
 }
 .date svg{
     width: 16px;
@@ -754,7 +754,7 @@ header.navbar {
   }
   
   /* Responsive */
-  @media (max-width: 768px) {
+  @media (max-width:768px) {
     .btn.sign-in{
       display: none;
     }
@@ -780,6 +780,14 @@ header.navbar {
     .hero-section{
       overflow: hidden;
     }
+     .bounty-challenges .cards, .past-bounties .cards {
+        grid-template-columns: 100%;
+    }
+
+    .card-footer {
+    flex-direction: column;
+    }
+
     .footer .container {
       flex-direction: column;
       align-items: center;
