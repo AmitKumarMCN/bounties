@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C# Corner - Bounty</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         
@@ -15,7 +14,7 @@
     top:100px;
 }
 .bounty-details-banner {
-    padding: 4rem 0;
+    padding: 4rem 0 2rem;
     text-align: center;
     background: url(images/grid-svg-image.svg) center center / cover no-repeat;
 }
@@ -48,6 +47,18 @@
 }
         .bounty-details-banner .detail-item .duedate{
     color: #00ffff;
+}
+
+.winner-announcement-box{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(-190deg, #00ff04, #80ff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 1px solid #8BC34A;
+    padding: 0.9rem;
 }
 /* Content Wrapper */
 .content-wrapper {
@@ -205,6 +216,69 @@ article {
                 margin-top:0.5rem;
                 font-size: 0.9rem;
             }
+
+            /* owl-carousel css */
+
+            .bounties-slider-main-container{
+            max-width:480px;
+        }
+        .bounties-slider-container{
+            width:100%;
+        }
+        .bounties-slider-inner-container{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            padding:20px;
+        }
+    
+       
+    .bounties-slider-main-container .owl-dots .owl-dot span {
+        width: 10px;
+        height: 10px;
+        margin: 5px 7px;
+        background: #BCDBFE40;
+        display: block;
+        -webkit-backface-visibility: visible;
+        transition: opacity .2s ease;
+        border-radius: 30px;
+    }
+    .bounties-slider-main-container .owl-nav,
+    .bounties-slider-main-container .owl-dots{
+        text-align: center;
+        margin-top: 10px;
+    }
+    .bounties-slider-main-container .owl-dots .owl-dot span{
+        margin: 5px;
+    }
+    .bounties-slider-main-container .owl-dots .owl-dot.active span, 
+    .bounties-slider-main-container .owl-theme .owl-dots .owl-dot:hover span {
+        background: #E67E22;
+    }
+   
+    .bounties-slider-main-container .owl-nav button{
+        position: absolute;
+        color: #BCDBFE40 !important;
+        top: 35%;
+    }
+    .bounties-slider-main-container .owl-nav button:hover{
+        color: #E67E22 !important;;
+    }
+    .bounties-slider-main-container .owl-nav button.owl-prev {
+        left: -5px;
+    }
+    .bounties-slider-main-container .owl-nav button.owl-next {
+        right: -5px;
+    }
+    @media(max-width:920px){
+            .bounties-slider-inner-container{
+                flex-direction: column-reverse;
+                padding: 20px;
+            }
+    
+    }
+
     </style>
 </head>
 <body>
@@ -244,7 +318,9 @@ article {
                     <span class="prize"><i class="fas fa-dollar"></i> 1,000 Cash Prize</span>
                 </div>
             </div>
-                <!-- <a href="#" class="btn small primary">participate-items Now</a> -->
+            <div class="winner-announcement-box">
+                    Winner announced on: <span class="highlight">June 01, 2026</span>
+            </div>
         </div>
     </section>
 
@@ -336,7 +412,7 @@ article {
                 </p>
             </div>
         <div class="cta-buttons">
-            <a href="#" class="btn primary">Participate Now</a>
+            <a href="submit-bounties.html" class="btn primary">Participate Now</a>
         </div>
 
 <!-- Participates Start-->
@@ -399,13 +475,92 @@ article {
         
     </div>
     <aside class="right-sidebar">
-        <div class="sidebar-content sticky">
+        <!-- <div class="sidebar-content sticky">
             <h3><i class="fas fa-gift"></i> Unlock Rewards</h3>
             <p>
                 Discover the exciting opportunities in the world of AI and software development! Join our bounty program to share your knowledge, showcase your skills, and contribute to the future of technology.
             </p>
             <a href="#" class="join-button">Join Now!</a>
-        </div> 
+        </div>  -->
+<style>
+.bounties-card {
+    display: block;
+    background: linear-gradient(325deg, rgb(4, 89, 100), #363671);
+    padding: 25px;
+    border-radius: 12px;
+    width: auto;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #535384;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.bounties-card:hover {
+    border-color: #b2b2ff;
+    background: linear-gradient(325deg, rgb(1, 111, 126), #474790);
+}
+    .bounties-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+.bounties-descriptions{
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    color: #d1d7e0;
+}
+.bounties-card-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: #dfdfe0;
+}
+</style>
+
+<div class="sub-headings">Latest Bounties</div>
+
+<div class="bounties-slider-main-container">
+                <div class="owl-carousel owl-theme" id="bountiesSlider">
+                    <!-- item 01 -->
+                    <div class="item active">
+                    <a href="bounty-details-page.html" class="bounties-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="bounties-title">AWS Serverless Architecture Best Practices</h3>
+                    <p class="bounties-descriptions">Share insights on building scalable serverless applications with AWS.</p>
+                    <div class="bounties-card-footer">
+                        <div class="prize"><i class="fas fa-coins"></i>  10,000 points</div>
+                        <div class="date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Due Date: May 30</span>
+                        </div>
+                    </div>
+                </a>
+                    </div>
+                <!-- item 02 -->
+                    <div class="item">
+                        <a href="bounty-details-page.html" class="bounties-card aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="title">AWS Serverless Architecture Best Practices</h3>
+                        <p class="bounties-descriptions">Share insights on building scalable serverless applications with AWS.</p>
+                        <div class="card-footer">
+                            <div class="prize"><i class="fas fa-coins"></i>  10,000 points</div>
+                            <div class="date">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Due Date: May 30</span>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+
+                    <!-- bountiesSlider end -->
+            </div>
+</div>
+   
+
+
     </aside>
 
            
@@ -457,45 +612,38 @@ article {
         </div>
       </footer>
 
-    
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
+    <link rel="stylesheet" href="bounties-slider/owl.carousel.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="bounties-slider/owl.carousel.min.js"></script>
 
-    // Select all navbar links
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const sections = document.querySelectorAll('section');
-
-    // Function to update active class based on scroll position
-    function updateActiveLink() {
-        let currentSection = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 50; // Adjust for navbar height
-            if (window.scrollY >= sectionTop) {
-                currentSection = section.getAttribute('id');
-            }
+        <!-- Initialize the Owl Carousel -->
+        <script type="text/javascript">
+            $(document).ready(function(){
+            var owl = $('#bountiesSlider');
+            owl.owlCarousel({
+                    items: 5,
+                    autoplay: true,
+                    loop:true,
+                    margin:10,
+                    dots:true,
+                    autoHeight: false,
+                    autoplayTimeout: 5000,
+                    smartSpeed: 800,
+                    nav:true,
+                    responsiveClass:true,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        600:{
+                            items:1
+                        },
+                        1000:{
+                            items:1
+                        }
+                    }
+            });
         });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === currentSection) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    // Add scroll event listener
-    window.addEventListener('scroll', updateActiveLink);
-
-
-    const menuToggle = document.querySelector('.menu-toggle');
-  const navLink = document.querySelector('.navbar');
-
-  menuToggle.addEventListener('click', () => {
-    navLink.classList.toggle('show-menu');
-  });
-
-  </script>
+    </script>
 </body>
 </html>
