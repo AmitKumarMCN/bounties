@@ -217,10 +217,10 @@ article {
                 font-size: 0.9rem;
             }
 
-            /* owl-carousel css */
+    /* owl-carousel css */
 
-            .bounties-slider-main-container{
-            max-width:480px;
+        .bounties-slider-main-container{
+            max-width:416px;
         }
         .bounties-slider-container{
             width:100%;
@@ -272,12 +272,52 @@ article {
         right: -5px;
     }
     @media(max-width:920px){
-            .bounties-slider-inner-container{
-                flex-direction: column-reverse;
-                padding: 20px;
-            }
+        .content-wrapper{
+            grid-template-columns: 1fr;
+        }
+        .bounties-slider-main-container{
+            max-width:416px;
+        }
     
     }
+
+    .bounties-card {
+    display: block;
+    background: linear-gradient(325deg, rgb(4, 89, 100), #363671);
+    padding: 25px;
+    border-radius: 12px;
+    width: auto;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #535384;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.bounties-card:hover {
+    border-color: #b2b2ff;
+    background: linear-gradient(325deg, rgb(1, 111, 126), #474790);
+}
+    .bounties-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+.bounties-descriptions{
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    color: #d1d7e0;
+}
+.bounties-card-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: #dfdfe0;
+}
 
     </style>
 </head>
@@ -482,45 +522,7 @@ article {
             </p>
             <a href="#" class="join-button">Join Now!</a>
         </div>  -->
-<style>
-.bounties-card {
-    display: block;
-    background: linear-gradient(325deg, rgb(4, 89, 100), #363671);
-    padding: 25px;
-    border-radius: 12px;
-    width: auto;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #535384;
-    position: relative;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-.bounties-card:hover {
-    border-color: #b2b2ff;
-    background: linear-gradient(325deg, rgb(1, 111, 126), #474790);
-}
-    .bounties-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-    color: #ffffff;
-}
-.bounties-descriptions{
-    font-size: 1.1rem;
-    margin-bottom: 35px;
-    color: #d1d7e0;
-}
-.bounties-card-footer {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
-    color: #dfdfe0;
-}
-</style>
+
 
 <div class="sub-headings">Latest Bounties</div>
 
@@ -621,27 +623,13 @@ article {
             $(document).ready(function(){
             var owl = $('#bountiesSlider');
             owl.owlCarousel({
-                    items: 5,
+                    items: 1,
                     autoplay: true,
                     loop:true,
                     margin:10,
                     dots:true,
-                    autoHeight: false,
-                    autoplayTimeout: 5000,
-                    smartSpeed: 800,
-                    nav:true,
-                    responsiveClass:true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:1
-                        },
-                        1000:{
-                            items:1
-                        }
-                    }
+                    nav:false,
+
             });
         });
     </script>
